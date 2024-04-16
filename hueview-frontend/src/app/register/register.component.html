@@ -1,0 +1,36 @@
+<div class="register-container">
+    <h2>Create Account</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" formControlName="username" required>
+        <div *ngIf="username?.invalid && (username?.dirty || username?.touched)" class="error-message">
+          <span *ngIf="username?.errors?.['required']">Username is required.</span>
+          <span *ngIf="username?.errors?.['minlength']">Username must be at least 4 characters long.</span>
+          <span *ngIf="username?.errors?.['pattern']">Use only numbers and alphabets.</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" formControlName="email" required>
+        <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="error-message">
+          <span *ngIf="email?.errors?.['required']">Email is required.</span>
+          <span *ngIf="email?.errors?.['email']">Invalid email format.</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" formControlName="password" required>
+        <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="error-message">
+          <span *ngIf="password?.errors?.['required']">Password is required.</span>
+          <span *ngIf="password?.errors?.['minlength']">Password must be at least 8 characters long.</span>
+          <span *ngIf="password?.errors?.['passwordStrength']">Password must contain: {{ password?.errors?.['passwordStrength'] ?? '' }}</span>
+        </div>
+      </div>
+      <button type="submit" [disabled]="registerForm.invalid">Register</button>
+    </form>
+    <div class="links">
+      Already have an account?
+      <a href="/signin"> Sign in</a>
+    </div>
+  </div>

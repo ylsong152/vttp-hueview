@@ -1,0 +1,60 @@
+p {
+  margin: 0;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1em 0;
+}
+
+.image-container {
+  margin-bottom: 1em;
+}
+
+.image {
+  max-height: 50vh;
+  cursor: pointer;
+}
+
+.image.enlarged {
+  max-height: 80vh;
+}
+
+.color-card {
+  background-color: #f5f5f5;
+  padding: 1em;
+  border-radius: 4px;
+  margin-bottom: 1em;
+}
+
+.color-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.color-preview {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 1em;
+}
+
+.color-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.file-input-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1em;
+  gap: 1em;
+}
+
+.mag-glass {
+  margin: 0.5em;
+}

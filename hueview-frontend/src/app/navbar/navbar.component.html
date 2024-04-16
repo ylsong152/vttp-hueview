@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+  <div class="navbar-container">
+    <h1 (click)="toHome()">
+      <span><img src="../../assets/favicon-32x32.png"></span>
+      HueView
+    </h1>
+    <div class="navbar-items">
+      <ul>
+        <li *ngFor="let item of navItems">
+          <button mat-raised-button (click)="navigateToSignin()">{{ item }}</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</mat-toolbar>

@@ -1,0 +1,28 @@
+<div class="main-container">
+    <div *ngIf="imageUrl" class="image-container">
+      <img [src]="imageUrl" (click)="onImageClick($event)" [ngClass]="{'enlarged': isEnlarged}" class="image">
+      <button mat-icon-button color="primary" (click)="toggleImageSize()" class="mag-glass">
+        <mat-icon>{{ isEnlarged ? 'zoom_out' : 'zoom_in' }}</mat-icon>
+      </button>
+    </div>
+    <mat-card *ngIf="selectedColorRGB && selectedColorHex" class="color-card">
+      <mat-card-content class="color-info">
+        <div class="color-preview" [style.background-color]="selectedColorRGB"></div>
+        <div class="color-details">
+          <p>RGB: {{ selectedColorRGB }}</p>
+          <p>Hex: {{ selectedColorHex | uppercase }}</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <div class="file-input-container">
+      <button mat-raised-button color="primary" (click)="fileInput.click()">
+        <mat-icon>upload</mat-icon>
+        Upload Image
+      </button>
+      <input #fileInput type="file" (change)="onFileSelected($event)" accept="image/*" style="display: none;">
+      <button mat-raised-button color="primary" *ngIf="selectedColorHex" (click)="navigateToPalette()">
+        <mat-icon>palette</mat-icon>
+        Get Palette
+      </button>
+    </div>
+  </div>
