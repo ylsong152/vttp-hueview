@@ -1,0 +1,21 @@
+{
+    "name": "HueView",
+    "short_name": "Hueview",
+    "start_url": "/",
+    "description": "A web application for visualizing color patterns and complementary colors.",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#7a31f7",
+    "icons": [
+      {
+        "src": "assets/favicon-16x16.png",
+        "sizes": "16x16",
+        "type": "image/png"
+      },
+      {
+        "src": "assets/favicon-32x32.png",
+        "sizes": "32x32",
+        "type": "image/png"
+      }
+    ]
+  }
