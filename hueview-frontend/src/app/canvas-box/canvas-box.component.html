@@ -12,7 +12,10 @@
       <mat-label>Select Skin Color</mat-label>
       <mat-select (selectionChange)="onSkinColorChange($event)">
         <mat-option *ngFor="let color of skinColors" [value]="color.hex">
-          <div class="color-box" [style.background-color]="color.hex"></div>
+          <div class="color-item">
+            <div class="color-box" [style.background-color]="color.hex"></div>
+            {{color.name}}
+          </div>
         </mat-option>
       </mat-select>
     </mat-form-field>
@@ -20,21 +23,36 @@
       <mat-label>Select Shoe Color</mat-label>
       <mat-select (selectionChange)="onShoeColorChange($event)">
         <mat-option *ngFor="let color of shoeColors" [value]="color.hex">
-          {{color.name}}
+          <div class="color-item">
+            <div class="color-box" [style.background-color]="color.hex"></div>
+            {{color.name}}
+          </div>
         </mat-option>
       </mat-select>
     </mat-form-field>
   </div>
   <div class="color-info">
-    <p>Shirt Color: {{currentShirtColor | uppercase}}</p>
-    <p>Pants Color: {{currentPantsColor | uppercase}}</p>
+    <div class="color-item">
+      <p>Shirt Color: {{currentShirtColor | uppercase}}</p>
+      <div class="color-box" [style.background-color]="currentShirtColor"></div>
+    </div>
+    <div class="color-item">
+      <p>Pants Color: {{currentPantsColor | uppercase}}</p>
+      <div class="color-box" [style.background-color]="currentPantsColor"></div>
+    </div>
   </div>
   <div class="favorite-combinations">
     <h3>Favorite Combinations</h3>
     <ul>
       <li *ngFor="let combination of favoriteCombinations; let i = index">
-        <span>Shirt: {{combination.shirtColor}}, Pants: {{combination.pantsColor}}</span>
-        <button mat-button (click)="applyFavoriteCombination(combination)" >Apply</button>
+        <span>
+          Shirt: {{combination.shirtColor | uppercase}}
+          <div class="color-box" [style.background-color]="combination.shirtColor"></div>
+          ,
+          Pants: {{combination.pantsColor | uppercase}}
+          <div class="color-box" [style.background-color]="combination.pantsColor"></div>
+        </span>
+        <button mat-button (click)="applyFavoriteCombination(combination)">Apply</button>
         <button mat-button color="warn" (click)="removeFavoriteCombination(i)">Remove</button>
       </li>
     </ul>

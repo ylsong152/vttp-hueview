@@ -25,10 +25,32 @@
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
+
+    .color-item {
+      display: flex;
+      align-items: center;
+
+      .color-box {
+        padding-top: 2rem;
+        margin-top: 2rem;
+      }
+    }
   }
 
   .color-info {
     margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+
+    .color-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .color-box {
+        margin-bottom: 1rem;
+      }
+    }
   }
 
   .favorite-combinations {
@@ -48,6 +70,12 @@
         gap: 0.5rem;
         margin-bottom: 0.5rem;
 
+        span {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
         button {
           margin-left: 0.5rem;
         }
@@ -65,7 +93,6 @@
   height: 20px;
   border-radius: 50%;
   display: inline-block;
-  margin-right: 8px;
 }
 
 .fav-btn {
