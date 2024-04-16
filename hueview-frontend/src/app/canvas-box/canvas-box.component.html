@@ -1,11 +1,33 @@
 <div class="canvas-container">
-    <div class="canvas-wrapper">
-      <canvas #canvas></canvas>
-    </div>
-    <div class="button-container">
-      <button mat-raised-button color="primary" (click)="toggleAnimation()">Walk</button>
-      <button mat-raised-button color="accent" (click)="changeShirtColor()">Randomize Shirt Color</button>
-      <button mat-raised-button color="warn" (click)="changePantsColor()">Randomize Pants Color</button>
-    </div>
+  <div class="canvas-wrapper">
+    <canvas #canvas></canvas>
   </div>
-  
+  <div class="button-container">
+    <button mat-raised-button color="primary" (click)="toggleAnimation()">Walk</button>
+    <button mat-raised-button color="accent" (click)="changeShirtColor()">Randomize Shirt Color</button>
+    <button mat-raised-button color="warn" (click)="changePantsColor()">Randomize Pants Color</button>
+  </div>
+  <div class="shoes-skin">
+    <mat-form-field>
+      <mat-label>Select Skin Color</mat-label>
+      <mat-select (selectionChange)="onSkinColorChange($event)">
+        <mat-option *ngFor="let color of skinColors" [value]="color.hex">
+          <div class="color-box" [style.background-color]="color.hex"></div>
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Select Shoe Color</mat-label>
+      <mat-select (selectionChange)="onShoeColorChange($event)">
+        <mat-option *ngFor="let color of shoeColors" [value]="color.hex">
+          {{color.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="color-info">
+    <p>Shirt Color: {{currentShirtColor | uppercase}}</p>
+    <p>Pants Color: {{currentPantsColor | uppercase}}</p>
+    <p>Shoes Color: {{currentShoesColor | uppercase}}</p>
+  </div>
+</div>

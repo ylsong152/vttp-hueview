@@ -50,6 +50,7 @@ public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
 
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody User user) {
+        System.out.println("register is called");
         if (userService.findByUsername(user.getUsername()) != null) {
             return ResponseEntity.badRequest().body(new MessageResponse("Username is already taken!"));
         }
@@ -70,7 +71,7 @@ public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
     
     @GetMapping("/asd")
     public String asdf () {
-        return "Hi dzag";
+        return "Hi dog";
     }
 }
 
