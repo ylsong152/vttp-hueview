@@ -28,6 +28,16 @@
   <div class="color-info">
     <p>Shirt Color: {{currentShirtColor | uppercase}}</p>
     <p>Pants Color: {{currentPantsColor | uppercase}}</p>
-    <p>Shoes Color: {{currentShoesColor | uppercase}}</p>
+  </div>
+  <div class="favorite-combinations">
+    <h3>Favorite Combinations</h3>
+    <ul>
+      <li *ngFor="let combination of favoriteCombinations; let i = index">
+        <span>Shirt: {{combination.shirtColor}}, Pants: {{combination.pantsColor}}</span>
+        <button mat-button (click)="applyFavoriteCombination(combination)" >Apply</button>
+        <button mat-button color="warn" (click)="removeFavoriteCombination(i)">Remove</button>
+      </li>
+    </ul>
+    <button mat-raised-button (click)="addToFavorites()" class="fav-btn">Add to Favorites</button>
   </div>
 </div>

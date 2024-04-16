@@ -32,6 +32,8 @@ export class CanvasBoxComponent implements OnInit, AfterViewInit, OnChanges {
   currentPantsColor: string = '#000000';
   currentShoesColor: string = '#6b3200';
 
+  favoriteCombinations: { shirtColor: string, pantsColor: string }[] = [];
+
   skinColors = [
     { name: 'FAF7D0', hex: '#FAF7D0' },
     { name: 'DFC7B3', hex: '#DFC7B3' },
@@ -339,7 +341,20 @@ export class CanvasBoxComponent implements OnInit, AfterViewInit, OnChanges {
   //   });
   // }
   
-  public getCurrentOutfit() {
-    
+  public addToFavorites() {
+    const combination = {
+      shirtColor: this.currentShirtColor,
+      pantsColor: this.currentPantsColor
+    };
+    this.favoriteCombinations.push(combination);
+  }
+
+  public applyFavoriteCombination(combination: { shirtColor: string, pantsColor: string }) {
+    this.updateShirtColor(combination.shirtColor);
+    this.updatePantsColor(combination.pantsColor);
+  }
+
+  public removeFavoriteCombination(index: number) {
+    this.favoriteCombinations.splice(index, 1);
   }
 }

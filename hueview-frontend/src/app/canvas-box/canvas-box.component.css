@@ -3,22 +3,61 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
 
-canvas {
-  width: 60vw !important;
-  height: 60vh !important;
-}
+  .canvas-wrapper {
+    canvas {
+      width: 60vw !important;
+      height: 60vh !important;
+    }
+  }
 
-.button-container {
-  display: flex;
-  flex-direction: row; 
-  justify-content: center; 
-  align-items: center;
-}
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
 
-button {
-  margin: 10px 10px 20px 10px;
+    button {
+      margin: 0 0.5rem;
+    }
+  }
+
+  .shoes-skin {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .color-info {
+    margin-top: 1rem;
+  }
+
+  .favorite-combinations {
+    margin-top: 1rem;
+
+    h3 {
+      font-weight: 500;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+
+        button {
+          margin-left: 0.5rem;
+        }
+      }
+    }
+
+    button {
+      margin-top: 0.5rem;
+    }
+  }
 }
 
 .color-box {
@@ -29,8 +68,6 @@ button {
   margin-right: 8px;
 }
 
-.shoes-skin {
-  display: flex;
-  flex-direction: row;
-  gap: 1em;
+.fav-btn {
+  margin-bottom: 20px;
 }
