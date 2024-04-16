@@ -74,7 +74,8 @@ export class CanvasBoxComponent implements OnInit, AfterViewInit, OnChanges {
   private setupCamera() {
     const aspectRatio = window.innerWidth / window.innerHeight;
     this.camera = new THREE.PerspectiveCamera(75, aspectRatio, 0.1, 0);
-    this.camera.position.set(0, 0, 2); // Adjust the camera position to be closer
+    // Adjust camera position
+    this.camera.position.set(0, 0, 2);
   }
 
   private setupLights() {
