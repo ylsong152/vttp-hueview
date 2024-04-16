@@ -1,9 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, OnChanges, Input, SimpleChanges, ChangeDetectorRef, NgZone } from '@angular/core';
 import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { ColorStore } from '../main/color.store';
-
+import { GLTFLoader } from 'three-stdlib';
+import { OrbitControls } from 'three-stdlib';
 
 
 @Component({
